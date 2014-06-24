@@ -5,7 +5,7 @@
  * de depósito, pois qualquer pessoa que esteja portando os códigos de identificação de uma conta 
  * (número da agência, número e tipo da conta bancária) poderão efetuar um depósito em dinheiro ou 
  * cheque na conta de um cliente do BVB. */
-package br.com.bvb.modulos;
+package tsi.too.bvb.modulos;
 
 public class CaixaEletronico {
 

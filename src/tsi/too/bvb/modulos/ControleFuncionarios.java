@@ -1,4 +1,4 @@
-package br.com.bvb.modulos;
+package tsi.too.bvb.modulos;
 
 public class ControleFuncionarios {
 

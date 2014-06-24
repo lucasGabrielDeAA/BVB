@@ -3,7 +3,7 @@
  * verificar o saldo da conta, sacar dinheiro e efetuar depósito. As funções deste módulo são para 
  * uso exclusivo dos funcionários do banco, sendo que os serviços de administração da conta (p. ex. 
  * saque, depósito e extrato) são realizados pelo próprio cliente através do Caixa Eletrônico.*/
-package br.com.bvb.modulos;
+package tsi.too.bvb.modulos;
 
 public abstract class ContasBancarias {
 	
