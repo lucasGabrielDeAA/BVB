@@ -35,10 +35,10 @@ public class IgGerente extends JDialog
   wallPaperLabel.setBounds(10, 22, 982, 739);
   getContentPane().add(wallPaperLabel);
   
-  JButton addUserButton = new JButton("");
-  addUserButton.setToolTipText("Cadastrar Clientes");
-  addUserButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/add_user.png")));
-  addUserButton.addActionListener(new ActionListener()
+  JButton addButton = new JButton("");
+  addButton.setToolTipText("Cadastrar Funcionários");
+  addButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/add_user.png")));
+  addButton.addActionListener(new ActionListener()
   {
    public void actionPerformed(ActionEvent arg0)
    {
@@ -52,26 +52,26 @@ public class IgGerente extends JDialog
    }
   }
   );
-  addUserButton.setBounds(6, 47, 135, 121);
-  wallPaperLabel.add(addUserButton);
+  addButton.setBounds(6, 47, 135, 121);
+  wallPaperLabel.add(addButton);
   
-  JButton searchUserButton = new JButton("");
-  searchUserButton.setToolTipText("Pesquisar Cliente");
-  searchUserButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/search_user.png")));
-  searchUserButton.setBounds(6, 308, 135, 121);
-  wallPaperLabel.add(searchUserButton);
+  JButton searchButton = new JButton("");
+  searchButton.setToolTipText("Pesquisar Funcionários");
+  searchButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/search_user.png")));
+  searchButton.setBounds(6, 303, 135, 121);
+  wallPaperLabel.add(searchButton);
   
-  JButton removeUserButton = new JButton("");
-  removeUserButton.setToolTipText("Excluir Cliente");
-  removeUserButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/remove_user.png")));
-  removeUserButton.setBounds(6, 431, 135, 121);
-  wallPaperLabel.add(removeUserButton);
+  JButton removeButton = new JButton("");
+  removeButton.setToolTipText("Excluir Funcionários");
+  removeButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/remove_user.png")));
+  removeButton.setBounds(6, 431, 135, 121);
+  wallPaperLabel.add(removeButton);
   
-  JButton updateUserButton = new JButton("");
-  updateUserButton.setToolTipText("Alterar Dados do Cliente");
-  updateUserButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/update_user.png")));
-  updateUserButton.setBounds(6, 175, 135, 121);
-  wallPaperLabel.add(updateUserButton);
+  JButton updateButton = new JButton("");
+  updateButton.setToolTipText("Alterar Dados de Funcionários");
+  updateButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/update_user.png")));
+  updateButton.setBounds(6, 175, 135, 121);
+  wallPaperLabel.add(updateButton);
   
   JButton reportUserButton = new JButton("");
   reportUserButton.setToolTipText("Relatório de Clientes");
@@ -93,7 +93,7 @@ public class IgGerente extends JDialog
   
   JButton updateAgencyButton = new JButton("");
   updateAgencyButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/update_agency.png")));
-  updateAgencyButton.setToolTipText("Alterar Dados da Agência");
+  updateAgencyButton.setToolTipText("Alterar Dados de Agências");
   updateAgencyButton.setBounds(841, 175, 135, 121);
   wallPaperLabel.add(updateAgencyButton);
   

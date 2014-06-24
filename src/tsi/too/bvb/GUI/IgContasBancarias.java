@@ -6,28 +6,39 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDesktopPane;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class IgContasBancarias extends JDialog
 {//Início do corpo da classe.
 	
  public IgContasBancarias()
  {
-  setTitle("Controle de Clientes");
+  setTitle("Área do Funcionário");
   setFont(new Font("Nimbus Sans L", Font.BOLD, 20));
-  setSize(1000, 800);
+  setSize(1000, 730);
   getContentPane().setLayout(null);
   
-  JDesktopPane desktopPane = new JDesktopPane();
-  desktopPane.setBounds(6, 6, 982, 704);
-  getContentPane().add(desktopPane);
-  desktopPane.setLayout(null);
+  JMenuBar barraDeMenu = new JMenuBar();
+  barraDeMenu.setBounds(10, 0, 85, 23);
+  getContentPane().add(barraDeMenu);
   
-  JButton addUserButton = new JButton("");
-  addUserButton.setToolTipText("Cadastrar Clientes");
-  addUserButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/add_user.png"));
-  addUserButton.addActionListener(new ActionListener()
+  JMenu sobreItem = new JMenu("Ajuda");
+  barraDeMenu.add(sobreItem);
+  JMenuItem mntmSobre = new JMenuItem("Sobre");
+  sobreItem.add(mntmSobre);
+  
+  JLabel wallPaperLabel = new JLabel("");
+  wallPaperLabel.setBounds(10, 22, 982, 739);
+  getContentPane().add(wallPaperLabel);
+  
+  JButton addButton = new JButton("");
+  addButton.setToolTipText("Cadastrar Clientes");
+  addButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/add_user.png")));
+  addButton.addActionListener(new ActionListener()
   {
    public void actionPerformed(ActionEvent arg0)
    {
@@ -41,62 +52,32 @@ public class IgContasBancarias extends JDialog
    }
   }
   );
-  addUserButton.setBounds(6, 6, 135, 121);
-  desktopPane.add(addUserButton);
+  addButton.setBounds(6, 47, 135, 121);
+  wallPaperLabel.add(addButton);
   
-  JButton searchUserButton = new JButton("");
-  searchUserButton.setToolTipText("Pesquisar Cliente");
-  searchUserButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/search_user.png"));
-  searchUserButton.setBounds(6, 129, 135, 121);
-  desktopPane.add(searchUserButton);
+  JButton searchButton = new JButton("");
+  searchButton.setToolTipText("Pesquisar Clientes");
+  searchButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/search_user.png")));
+  searchButton.setBounds(6, 303, 135, 121);
+  wallPaperLabel.add(searchButton);
   
-  JButton removeUserButton = new JButton("");
-  removeUserButton.setToolTipText("Excluir Cliente");
-  removeUserButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/remove_user.png"));
-  removeUserButton.setBounds(6, 375, 135, 121);
-  desktopPane.add(removeUserButton);
+  JButton removeButton = new JButton("");
+  removeButton.setToolTipText("Excluir Clientes");
+  removeButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/remove_user.png")));
+  removeButton.setBounds(6, 431, 135, 121);
+  wallPaperLabel.add(removeButton);
   
-  JButton updateUserButton = new JButton("");
-  updateUserButton.setToolTipText("Alterar Dados do Cliente");
-  updateUserButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/update_user.png"));
-  updateUserButton.setBounds(6, 252, 135, 121);
-  desktopPane.add(updateUserButton);
+  JButton updateButton = new JButton("");
+  updateButton.setToolTipText("Alterar Dados de Clientes");
+  updateButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/update_user.png")));
+  updateButton.setBounds(6, 175, 135, 121);
+  wallPaperLabel.add(updateButton);
   
   JButton reportUserButton = new JButton("");
   reportUserButton.setToolTipText("Relatório de Clientes");
-  reportUserButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/report_user.png"));
-  reportUserButton.setBounds(6, 500, 135, 121);
-  desktopPane.add(reportUserButton);
-  
-  JButton addAgencyButton = new JButton("");
-  addAgencyButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/add_agency.png"));
-  addAgencyButton.setToolTipText("Cadastrar Agências");
-  addAgencyButton.setBounds(890, 6, 86, 86);
-  desktopPane.add(addAgencyButton);
-  
-  JButton searchAgencyButton = new JButton("");
-  searchAgencyButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/search_agency.png"));
-  searchAgencyButton.setToolTipText("Procurar Agências");
-  searchAgencyButton.setBounds(890, 95, 86, 86);
-  desktopPane.add(searchAgencyButton);
-  
-  JButton updateAgencyButton = new JButton("");
-  updateAgencyButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/update_agency.png"));
-  updateAgencyButton.setToolTipText("Alterar Dados da Agência");
-  updateAgencyButton.setBounds(890, 185, 86, 86);
-  desktopPane.add(updateAgencyButton);
-  
-  JButton removeAgencyButton = new JButton("");
-  removeAgencyButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/remove_agency.png"));
-  removeAgencyButton.setToolTipText("Excluir Agência");
-  removeAgencyButton.setBounds(890, 275, 86, 86);
-  desktopPane.add(removeAgencyButton);
-  
-  JButton reportAgencyButton = new JButton("");
-  reportAgencyButton.setIcon(new ImageIcon("/home/technus/Área de Trabalho/BancoVirtualDeBarbacena/icones/report_agency.png"));
-  reportAgencyButton.setToolTipText("Relatório de Agências");
-  reportAgencyButton.setBounds(890, 365, 86, 86);
-  desktopPane.add(reportAgencyButton);
+  reportUserButton.setIcon(new ImageIcon(IgGerente.class.getResource("/tsi/too/bvb/imagens/report_user.png")));
+  reportUserButton.setBounds(6, 559, 135, 121);
+  wallPaperLabel.add(reportUserButton);
   
   setResizable(false);
   setLocationRelativeTo(null);
