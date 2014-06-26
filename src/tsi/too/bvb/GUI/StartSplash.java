@@ -14,49 +14,53 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ImageIcon;
 
 public class StartSplash extends JFrame
-{
- private static JProgressBar barraDeProgresso;//Início do corpo da classe.
+{//Início do corpo da classe.
+ private static JProgressBar barraDeProgresso;
+ private static JLabel etapasLabel;
+ 
  public StartSplash()
  {
-  barraDeProgresso = new JProgressBar();
-  barraDeProgresso.setForeground(new Color(50, 205, 50));
-		
-  JLabel wallPaperLabel = new JLabel("");
-  GroupLayout groupLayout = new GroupLayout(getContentPane());
-  groupLayout.setHorizontalGroup
-  (
-   groupLayout.createParallelGroup(Alignment.LEADING)
-   .addGroup(groupLayout.createSequentialGroup()
-   .addContainerGap()
-   .addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-   .addComponent(barraDeProgresso, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-   .addComponent(wallPaperLabel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 432, Short.MAX_VALUE))
-   .addContainerGap())
-  );
-
-  groupLayout.setVerticalGroup
-  (
-   groupLayout.createParallelGroup(Alignment.LEADING)
-   .addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-   .addComponent(wallPaperLabel, GroupLayout.PREFERRED_SIZE, 247, Short.MAX_VALUE)
-   .addPreferredGap(ComponentPlacement.RELATED)
-   .addComponent(barraDeProgresso, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-   .addContainerGap())
-  );
-
-  getContentPane().setLayout(groupLayout);
-  setLocation(350,200);
-  setSize(600, 300);
-  setResizable(false);
-  setVisible(true);
+ 	
+ 	JLabel wallPaperLabel = new JLabel("");
+ 	wallPaperLabel.setIcon(new ImageIcon(StartSplash.class.getResource("/tsi/too/bvb/imagens/logo-bvb.jpg")));
+ 	
+ 	barraDeProgresso = new JProgressBar();
+ 	barraDeProgresso.setMaximum(11);
+ 	barraDeProgresso.setBackground(new Color(0, 102, 51));
+ 	barraDeProgresso.setForeground(new Color(0, 204, 0));
+ 	
+ 	etapasLabel = new JLabel("");
+ 	GroupLayout groupLayout = new GroupLayout(getContentPane());
+ 	groupLayout.setHorizontalGroup(
+ 		groupLayout.createParallelGroup(Alignment.LEADING)
+ 			.addGroup(groupLayout.createSequentialGroup()
+ 				.addGap(12)
+ 				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+ 					.addGroup(groupLayout.createSequentialGroup()
+ 						.addComponent(etapasLabel)
+ 						.addContainerGap())
+ 					.addComponent(wallPaperLabel, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+ 					.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+ 						.addComponent(barraDeProgresso, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+ 						.addContainerGap())))
+ 	);
+ 	groupLayout.setVerticalGroup(
+ 		groupLayout.createParallelGroup(Alignment.LEADING)
+ 			.addGroup(groupLayout.createSequentialGroup()
+ 				.addComponent(wallPaperLabel, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)
+ 				.addPreferredGap(ComponentPlacement.UNRELATED)
+ 				.addComponent(etapasLabel)
+ 				.addPreferredGap(ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+ 				.addComponent(barraDeProgresso, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+ 				.addContainerGap())
+ 	);
+ 	getContentPane().setLayout(groupLayout);
+ 	
+ 	setLocation(350, 200);
+ 	setSize(600, 308);
+ 	setResizable(false);
+ 	setVisible(true);
  }
- 
- public static void main(String args[])
- {//Início do corpo do método main.
-  StartSplash telaDeSplash = new StartSplash();
-  
-  carregar();
- }//Fim do corpo do método main.
  
  /** Método utilizado para carregar a barra do JProgressBar
   * 
@@ -64,13 +68,24 @@ public class StartSplash extends JFrame
   */
  public static void carregar()
  {
-  for(int barra=0;barra<=100;barra++)
+  String etapas[] = {"Carregando Arquivos de Log...","Criando Interfaces...","Carregando Interfaces...",
+		  			 "Verificando disponibilidade do Serviço...","Contando Cédulas do Caixa...",
+		  			 "Atualizando Dados De Clientes...","Atualizando Dados de Funcionários...",
+		  			 "Verificando Por Atualizações do BVB...","Verificando Conexão com a Rede...",
+		  			 "Minerando Dados...","Iniciando Aplicação...","Seja Bem Vindo..."};
+  
+  for(int barra=0;barra<=11;barra++)
   {
    try
    {
-	Thread.sleep(50);
+	Thread.sleep(700);
 	
 	barraDeProgresso.setValue(barra);
+	etapasLabel.setText(etapas[barra]);
+	
+	if(etapasLabel.getText()==etapas[11])
+	  Thread.sleep(1000);
+	
    }catch(InterruptedException e)
    {
 	showMessageDialog(null, "Não foi possível carregar o programa", "Start", ERROR_MESSAGE);
