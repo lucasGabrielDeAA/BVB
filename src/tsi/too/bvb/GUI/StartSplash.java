@@ -25,6 +25,7 @@ public class StartSplash extends JFrame
  	wallPaperLabel.setIcon(new ImageIcon(StartSplash.class.getResource("/tsi/too/bvb/imagens/logo-bvb.jpg")));
  	
  	barraDeProgresso = new JProgressBar();
+ 	barraDeProgresso.setStringPainted(true);
  	barraDeProgresso.setMaximum(11);
  	barraDeProgresso.setBackground(new Color(0, 102, 51));
  	barraDeProgresso.setForeground(new Color(0, 204, 0));
@@ -72,13 +73,13 @@ public class StartSplash extends JFrame
 		  			 "Verificando disponibilidade do Serviço...","Contando Cédulas do Caixa...",
 		  			 "Atualizando Dados De Clientes...","Atualizando Dados de Funcionários...",
 		  			 "Verificando Por Atualizações do BVB...","Verificando Conexão com a Rede...",
-		  			 "Minerando Dados...","Iniciando Aplicação...","Seja Bem Vindo..."};
+		  			 "Minerando Dados...","Iniciando Aplicação...","OK"};
   
   for(int barra=0;barra<=11;barra++)
   {
    try
    {
-	Thread.sleep(barra*30);
+	Thread.sleep(barra*60);
 	
 	barraDeProgresso.setValue(barra);
 	etapasLabel.setText(etapas[barra]);
@@ -90,7 +91,6 @@ public class StartSplash extends JFrame
    {
 	showMessageDialog(null, "Não foi possível carregar o programa", "Start", ERROR_MESSAGE);
    }
-   
   }
  }
 }//Fim do corpo da classe.
