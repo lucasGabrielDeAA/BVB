@@ -78,7 +78,7 @@ public class StartSplash extends JFrame
   {
    try
    {
-	Thread.sleep(barra*100);
+	Thread.sleep(barra*30);
 	
 	barraDeProgresso.setValue(barra);
 	etapasLabel.setText(etapas[barra]);
