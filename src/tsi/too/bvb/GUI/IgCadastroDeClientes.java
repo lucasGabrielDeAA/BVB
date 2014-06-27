@@ -27,7 +27,6 @@ public class IgCadastroDeClientes extends JDialog
  private JTextField logradouroTextField;
  private JTextField nomeTextfield;
  private JFormattedTextField movelFormatted;
- private String lookAndFeel = "Nimbus";
 
  public IgCadastroDeClientes() throws Exception
  {
@@ -151,9 +150,6 @@ public class IgCadastroDeClientes extends JDialog
    }
   });
   panel.add(btnCancelar);
-  
-  //Utiliza o método alterarVisual da classe FuncoesGUI para definir o look and feel da interface.
-  FuncoesGUI.alterarVisual(lookAndFeel);
   
   setResizable(false);
   setLocationRelativeTo(null);

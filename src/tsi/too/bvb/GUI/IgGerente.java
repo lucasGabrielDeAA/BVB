@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 public class IgGerente extends JDialog
 {//Início do corpo da classe.
 	
+	
  public IgGerente()
  {
   setTitle("Área do Gerente");
@@ -32,7 +33,8 @@ public class IgGerente extends JDialog
   sobreItem.add(mntmSobre);
   
   JLabel wallPaperLabel = new JLabel("");
-  wallPaperLabel.setBounds(10, 22, 982, 739);
+  wallPaperLabel.setIcon(null);
+  wallPaperLabel.setBounds(10, 22, 982, 681);
   getContentPane().add(wallPaperLabel);
   
   JButton addButton = new JButton("");
