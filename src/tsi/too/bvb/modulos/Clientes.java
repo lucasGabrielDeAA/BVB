@@ -1,14 +1,14 @@
 package tsi.too.bvb.modulos;
 
-public class Cliente {
+public class Clientes {
 	
 	private String cpf, nome, logradouro, bairro, cidade, uf, telFixo, telMovel;
 	private char complemento;
 	private int numero;
 	
-	public Cliente() {}
+	public Clientes() {}
 	
-	public Cliente(String cpf, String nome, String logradouro, String bairro,
+	public Clientes(String cpf, String nome, String logradouro, String bairro,
 			String cidade, String uf, String telFixo, String telMovel,
 			char complemento, int numero) {
 		this.cpf = cpf;
