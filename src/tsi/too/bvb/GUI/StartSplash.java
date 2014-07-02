@@ -38,20 +38,23 @@ public class StartSplash extends JFrame
  				.addGap(12)
  				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
  					.addGroup(groupLayout.createSequentialGroup()
- 						.addComponent(etapasLabel)
+ 						.addComponent(wallPaperLabel, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
  						.addContainerGap())
- 					.addComponent(wallPaperLabel, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
  					.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
- 						.addComponent(barraDeProgresso, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
- 						.addContainerGap())))
+ 						.addComponent(barraDeProgresso, GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+ 						.addContainerGap())
+ 					.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+ 						.addComponent(etapasLabel, GroupLayout.PREFERRED_SIZE, 566, GroupLayout.PREFERRED_SIZE)
+ 						.addGap(16))))
  	);
  	groupLayout.setVerticalGroup(
  		groupLayout.createParallelGroup(Alignment.LEADING)
  			.addGroup(groupLayout.createSequentialGroup()
+ 				.addContainerGap()
  				.addComponent(wallPaperLabel, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)
- 				.addPreferredGap(ComponentPlacement.UNRELATED)
+ 				.addPreferredGap(ComponentPlacement.RELATED)
  				.addComponent(etapasLabel)
- 				.addPreferredGap(ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+ 				.addPreferredGap(ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
  				.addComponent(barraDeProgresso, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
  				.addContainerGap())
  	);
@@ -72,8 +75,8 @@ public class StartSplash extends JFrame
   String etapas[] = {"Carregando Arquivos de Log...","Criando Interfaces...","Carregando Interfaces...",
 		  			 "Verificando disponibilidade do Serviço...","Contando Cédulas do Caixa...",
 		  			 "Atualizando Dados De Clientes...","Atualizando Dados de Funcionários...",
-		  			 "Verificando Por Atualizações do BVB...","Verificando Conexão com a Rede...",
-		  			 "Minerando Dados...","Iniciando Aplicação...","OK"};
+		  			 "Verificando Conexão com a Rede...","Verificando Por Atualizações do BVB...",
+		  			 "Atualizando dados do BVB...","Iniciando Aplicação...","OK"};
   
   for(int barra=0;barra<=11;barra++)
   {
