@@ -8,16 +8,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import tsi.too.bvb.GUI.FuncoesGUI;
 import tsi.too.bvb.GUI.IgBoasVindas;
 import tsi.too.bvb.GUI.StartSplash;
+import static tsi.too.bvb.GUI.StartSplash.*;
 
 public class BVBApp extends JFrame
 {//Início do corpo da classe.
 
  private static UIManager.LookAndFeelInfo looksAndFeel[];
  private static final String LOOK_AND_FEEL_NAME = "Nimbus";
- private String lookAndFeel = "Nimbus";
  
  public BVBApp()
  {
@@ -30,13 +29,15 @@ public class BVBApp extends JFrame
 
   //Exibe a tela de Splash.
   StartSplash telaDeSplash = new StartSplash();
-  telaDeSplash.carregar();
+  carregar();
   
   //Libera os recursos da tela de Splash para exibir as janelas seguintes.
   telaDeSplash.dispose();
 	 
   //Exibe a janela de Boas Vindas.
   IgBoasVindas bemVindo = new IgBoasVindas();
+  
+  //O botão "Iniciar" do objeto bemVindo, chama a tela de login para que o programa puramente se inicies.
   
   /* De acordo com o Login, verificando no arquivo de login qual o tipo de
    * usuário e exibindo a janela referente a cada usuário.
