@@ -3,8 +3,6 @@ package tsi.too.bvb.app;
 
 import javax.swing.JFrame;
 
-import tsi.too.bvb.GUI.IgBoasVindas;
-import tsi.too.bvb.GUI.IgCaixaEletronico;
 import tsi.too.bvb.GUI.StartSplash;
 import static tsi.too.bvb.GUI.StartSplash.*;
 
@@ -20,13 +18,6 @@ public class BVBApp extends JFrame
   
   //Libera os recursos da tela de Splash para exibir as janelas seguintes.
   telaDeSplash.dispose();
-  
-  IgCaixaEletronico caixa = new IgCaixaEletronico();
-	 
-  //Exibe a janela de Boas Vindas.
-  //IgBoasVindas bemVindo = new IgBoasVindas();
-  
-  //O botão "Iniciar" do objeto bemVindo, chama a tela de login para que o programa puramente se inicies.
   
   /* De acordo com o Login, verificando no arquivo de login qual o tipo de
    * usuário e exibindo a janela referente a cada usuário.
