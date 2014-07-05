@@ -1,12 +1,7 @@
 package tsi.too.bvb.app;
 
-import static javax.swing.JOptionPane.ERROR_MESSAGE;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import tsi.too.bvb.GUI.IgBoasVindas;
 import tsi.too.bvb.GUI.IgCaixaEletronico;
