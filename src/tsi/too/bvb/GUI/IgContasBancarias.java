@@ -22,15 +22,6 @@ public class IgContasBancarias extends JDialog
   setSize(1000, 730);
   getContentPane().setLayout(null);
   
-  JMenuBar barraDeMenu = new JMenuBar();
-  barraDeMenu.setBounds(10, 0, 85, 23);
-  getContentPane().add(barraDeMenu);
-  
-  JMenu sobreItem = new JMenu("Ajuda");
-  barraDeMenu.add(sobreItem);
-  JMenuItem mntmSobre = new JMenuItem("Sobre");
-  sobreItem.add(mntmSobre);
-  
   JLabel wallPaperLabel = new JLabel("");
   wallPaperLabel.setBounds(10, 22, 982, 739);
   getContentPane().add(wallPaperLabel);
