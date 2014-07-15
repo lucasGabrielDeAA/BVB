@@ -16,7 +16,7 @@ public class Extrato extends JDialog
  private JButton botaoSaque, botaoVoltar;
  private JTextArea extratoTextArea;
 
- public Extrato(String extrato)
+ public Extrato(final JDialog tela,String extrato)
  {
   setResizable(false);
   setTitle("Saque");
@@ -27,7 +27,7 @@ public class Extrato extends JDialog
   {
    public void actionPerformed(ActionEvent arg0)
    {
-  	//Pegar a referência da tela anterior.
+	tela.setVisible(true);
 	   
 	dispose();
    }
@@ -44,7 +44,7 @@ public class Extrato extends JDialog
    {
   	setVisible(false);
   	
-  	new IgSaque();
+  	new IgSaque(Extrato.this);
    }
   });
   botaoSaque.setIcon(new ImageIcon(Extrato.class.getResource("/tsi/too/bvb/imagens/next.png")));

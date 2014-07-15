@@ -16,7 +16,7 @@ public class EscolheExtrato extends JDialog
  private JButton periodicoBotao;
  private JButton voltarBotao;
 
- public EscolheExtrato()
+ public EscolheExtrato(final JDialog tela)
  {
   setTitle("Tipo de Extrato Desejado");
   setSize(450, 240);
@@ -32,7 +32,7 @@ public class EscolheExtrato extends JDialog
 	/* Faz a busca do saldo, joga em uma String e inicia a tela de extrato.
 	 * String extrato = extrato(numeroConta);
 	 * 
-	 * new Extrato(extrato);
+	 * new Extrato(EscolheExtrato.this,extrato);
 	 */
    }
   });
@@ -50,7 +50,7 @@ public class EscolheExtrato extends JDialog
 	 * Faz a busca do saldo, joga em uma String e inicia a tela de extrato.
 	 * String extrato = extrato(numeroConta);
 	 * 
-	 * new Extrato(extrato);
+	 * new Extrato(EscolheExtrato.this,extrato);
 	 */
    }
   });
@@ -63,7 +63,7 @@ public class EscolheExtrato extends JDialog
   {
    public void actionPerformed(ActionEvent e)
    {
-	//Pegar a referência da tela anterior.
+	tela.setVisible(true);
 	   
   	dispose();
    }

@@ -1,16 +1,16 @@
 package tsi.too.bvb.GUI;
 
-import javax.swing.JFrame;
 
 import java.awt.Font;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class IgCaixaEletronico extends JFrame
+public class IgCaixaEletronico extends JDialog
 {//Início do corpo da classe.
 	
  private Font fonte = new Font("Nimbus Sans L", Font.BOLD, 20); 
@@ -36,7 +36,7 @@ public class IgCaixaEletronico extends JFrame
 	{
 	 setVisible(false);
 		
-	 new IgSaque();
+	 new IgSaque(IgCaixaEletronico.this);
 	}catch (Exception e)
 	{
  	 e.printStackTrace();
@@ -52,9 +52,15 @@ public class IgCaixaEletronico extends JFrame
   {
    public void actionPerformed(ActionEvent arg0)
    {
-	setVisible(false);
-	   
-	new Deposito();	
+	try
+	{
+	 setVisible(false);
+		   
+	 new Deposito(IgCaixaEletronico.this);
+	}catch (Exception e)
+	{
+	 e.printStackTrace();
+	}	
    }
   });
   depositoButton.setFont(fonte);
@@ -62,30 +68,57 @@ public class IgCaixaEletronico extends JFrame
   wallPaperLabel.add(depositoButton);
   
   JButton saldoButton = new JButton("SALDO");
+  saldoButton.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+  	setVisible(false);
+  	
+  	//new Saque(IgCaixaEletronico.this);
+   }
+  });
   saldoButton.setFont(fonte);
   saldoButton.setBounds(73, 299, 190, 64);
   wallPaperLabel.add(saldoButton);
   
-  JButton extratoSimplesButton = new JButton("EXTRATO");
-  extratoSimplesButton.addActionListener(new ActionListener()
+  JButton extratoButton = new JButton("EXTRATO");
+  extratoButton.addActionListener(new ActionListener()
   {
    public void actionPerformed(ActionEvent e)
    {
 	setVisible(false);
 	
-  	new EscolheExtrato();
+  	new EscolheExtrato(IgCaixaEletronico.this);
    }
   });
-  extratoSimplesButton.setFont(fonte);
-  extratoSimplesButton.setBounds(533, 147, 190, 64);
-  wallPaperLabel.add(extratoSimplesButton);
+  extratoButton.setFont(fonte);
+  extratoButton.setBounds(533, 147, 190, 64);
+  wallPaperLabel.add(extratoButton);
   
   JButton tranfButton = new JButton("TRANFERÊNCIA");
+  tranfButton.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+  	setVisible(false);
+  	
+  	//new Transferencia(IgCaixaEletronico.this);
+   }
+  });
   tranfButton.setFont(fonte);
   tranfButton.setBounds(533, 223, 190, 64);
   wallPaperLabel.add(tranfButton);
   
   JButton resgateButton = new JButton("RESGATE");
+  resgateButton.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+  	setVisible(false);
+  	
+  	//new Resgate(IgCaixaEletronico.this);
+   }
+  });
   resgateButton.setFont(fonte);
   resgateButton.setBounds(533, 299, 190, 64);
   wallPaperLabel.add(resgateButton);
