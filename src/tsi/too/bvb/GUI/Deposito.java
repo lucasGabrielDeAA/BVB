@@ -5,38 +5,28 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
-import javax.swing.text.MaskFormatter;
-import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 
 public class Deposito extends JDialog
 {//Início do corpo da classe.
 
  private JButton botao1, botao2, botao3, botao4, botao5, botao6, botao7, botao8, botao9, botaoCorrige, botao0, botaoDeposito;
- private JFormattedTextField depositoFormattedTextField;
  private Font fonte = new Font("Nimbus Sans L", Font.BOLD, 20);
+ private JTextField depositoTextField;
  
- public Deposito()
+ public Deposito(final JDialog tela)
  {
-  //A classe MaskFormatter é utilizada para definir máscaras aos objetos onde se deseja padronizar estéticamente.
-  MaskFormatter mascaraDeDeposito = null;
-  try
-  {
-   mascaraDeDeposito = new MaskFormatter("####.##");
-  }catch(ParseException e)
-  {
-  }
-  
-  depositoFormattedTextField = new JFormattedTextField(mascaraDeDeposito);
-  depositoFormattedTextField.setFont(fonte);
-  depositoFormattedTextField.setColumns(6);
-  depositoFormattedTextField.setBackground(Color.WHITE);
-  depositoFormattedTextField.setBounds(9, 114, 150, 64);
-  getContentPane().add(depositoFormattedTextField);
+  depositoTextField = new JTextField();
+  depositoTextField.setFont(fonte);
+  depositoTextField.setColumns(6);
+  depositoTextField.setBackground(Color.WHITE);
+  depositoTextField.setEditable(false);
+  depositoTextField.setBounds(9, 111, 150, 64);
+  getContentPane().add(depositoTextField);
   getContentPane().setBackground(SystemColor.control);
   setSize(669, 480);
   setModal(true);
@@ -56,11 +46,11 @@ public class Deposito extends JDialog
   	{
   	 String saque = "0000.00";
   	 
-  	 saque = depositoFormattedTextField.getText();
+  	 saque = depositoTextField.getText();
   	 
   	 saque += botao1.getText();
   	 
-  	 depositoFormattedTextField.setText(saque);
+  	 depositoTextField.setText(saque);
   	}
    }
   );
@@ -79,11 +69,11 @@ public class Deposito extends JDialog
   	{
   	 String saque = null;
   	 
-  	 saque = depositoFormattedTextField.getText();
+  	 saque = depositoTextField.getText();
      
   	 saque += botao2.getText();
   		
-  	 depositoFormattedTextField.setText(saque);
+  	 depositoTextField.setText(saque);
   	}
    }
   );
@@ -99,11 +89,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao3.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao3.setBackground(new Color(192, 192, 192));
@@ -118,11 +108,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao4.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao4.setBackground(new Color(192, 192, 192));
@@ -137,11 +127,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao5.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao5.setBackground(new Color(192, 192, 192));
@@ -156,11 +146,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao6.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao6.setBackground(new Color(192, 192, 192));
@@ -175,11 +165,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao7.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao7.setBackground(new Color(192, 192, 192));
@@ -194,11 +184,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao8.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao8.setBackground(new Color(192, 192, 192));
@@ -213,11 +203,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao9.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao9.setBackground(new Color(192, 192, 192));
@@ -235,7 +225,7 @@ public class Deposito extends JDialog
     {
      String saque = "";
      
-  	 depositoFormattedTextField.setText(saque);
+  	 depositoTextField.setText(saque);
     }
    }
   );
@@ -251,11 +241,11 @@ public class Deposito extends JDialog
    {
   	String saque = "";
   	
-  	saque = depositoFormattedTextField.getText();
+  	saque = depositoTextField.getText();
   	
   	saque += botao0.getText();
   	
-  	depositoFormattedTextField.setText(saque);
+  	depositoTextField.setText(saque);
    }
   });
   botao0.setBackground(new Color(192, 192, 192));
@@ -267,7 +257,7 @@ public class Deposito extends JDialog
   {
    public void actionPerformed(ActionEvent e)
    {
-  	String valorDeposito = depositoFormattedTextField.getText();
+  	String valorDeposito = depositoTextField.getText();
   	
   	setVisible(false);
   	
@@ -281,6 +271,15 @@ public class Deposito extends JDialog
   getContentPane().add(botaoDeposito);
   
   JButton botaoCancelar = new JButton("CANCELAR");
+  botaoCancelar.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent arg0)
+   {
+	dispose();
+	
+	tela.setVisible(true);
+   }
+  });
   botaoCancelar.setIcon(new ImageIcon(Deposito.class.getResource("/tsi/too/bvb/imagens/return.png")));
   botaoCancelar.setFont(fonte);
   botaoCancelar.addActionListener(new ActionListener()
