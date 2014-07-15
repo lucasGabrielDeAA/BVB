@@ -1,28 +1,35 @@
 package tsi.too.bvb.GUI;
 
-import javax.swing.JFrame;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JProgressBar;
-
-import static javax.swing.JOptionPane.*;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 import java.awt.Color;
 
-import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class StartSplash extends JFrame
 {//Início do corpo da classe.
  private static JProgressBar barraDeProgresso;
  private static JLabel etapasLabel;
+ private UIManager.LookAndFeelInfo looksAndFeel[];
+ private static String lookAndFeel = "Nimbus";
  
  public StartSplash()
  {
  	
  	JLabel wallPaperLabel = new JLabel("");
  	wallPaperLabel.setIcon(new ImageIcon(StartSplash.class.getResource("/tsi/too/bvb/imagens/logo-bvb.jpg")));
+ 	
+ 	looksAndFeel = UIManager.getInstalledLookAndFeels();
  	
  	barraDeProgresso = new JProgressBar();
  	barraDeProgresso.setStringPainted(true);
@@ -60,6 +67,8 @@ public class StartSplash extends JFrame
  	);
  	getContentPane().setLayout(groupLayout);
  	
+ 	alterarVisual(lookAndFeel);
+ 	
  	setLocation(350, 200);
  	setSize(600, 308);
  	setResizable(false);
@@ -96,4 +105,35 @@ public class StartSplash extends JFrame
    }
   }
  }
+ 
+ /**
+	 * Altera a aparência e o comportamento (look-and-feel) da interface gráfica usando o nome do 
+	 * lookAndFell. Ativa o item de menu correspondente ao look-and-feel.
+	 */
+	private void alterarVisual(String lookAndFeel)
+	{
+	 try
+	 {
+	  //Localiza o look-and-feel selecionado pelo usuário. 
+	  for(int lf = 0; lf < looksAndFeel.length; lf++)
+		if(lookAndFeel.equalsIgnoreCase(looksAndFeel[lf].getName())) 
+		{
+		 //Configura o novo look-and-feel carregando a classe de aparência e comportamento através do método getClassName.
+		 UIManager.setLookAndFeel(looksAndFeel[lf].getClassName());
+		 break;
+		}
+		
+	    /*
+		 * Altera a aparência e o comportamento de cada componente anexado ao argumento do método 
+		 * updateComponentTreeUI da classe SwingUtilities para a nova aparência e o novo comportamento 
+		 * escolhido pelo usuário. 
+		 */
+		SwingUtilities.updateComponentTreeUI(this);
+	 } 
+	 //A partir da versão Java 7 (1.7) é possível usar um único catch para tratar várias exceções. 
+	 catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex)
+	 {
+	  ex.printStackTrace();
+	 }
+	}
 }//Fim do corpo da classe.

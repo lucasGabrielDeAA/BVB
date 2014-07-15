@@ -13,29 +13,30 @@ import javax.swing.JFormattedTextField;
 import javax.swing.text.MaskFormatter;
 import javax.swing.ImageIcon;
 
-public class IgSaque extends JDialog
+public class Deposito extends JDialog
 {//Início do corpo da classe.
- private JButton botao1, botao2, botao3, botao4, botao5, botao6, botao7, botao8, botao9, botaoCorrige, botao0, botaoSaque, botaoCancelar;
- private JFormattedTextField saqueFormattedTextField;
+
+ private JButton botao1, botao2, botao3, botao4, botao5, botao6, botao7, botao8, botao9, botaoCorrige, botao0, botaoDeposito;
+ private JFormattedTextField depositoFormattedTextField;
  private Font fonte = new Font("Nimbus Sans L", Font.BOLD, 20);
- private IgSaque igSaque;
  
- public IgSaque()
+ public Deposito()
  {
   //A classe MaskFormatter é utilizada para definir máscaras aos objetos onde se deseja padronizar estéticamente.
-  MaskFormatter mascaraDeSaque = null;
+  MaskFormatter mascaraDeDeposito = null;
   try
   {
-   mascaraDeSaque = new MaskFormatter("####.##");
+   mascaraDeDeposito = new MaskFormatter("####.##");
   }catch(ParseException e)
   {
   }
   
-  saqueFormattedTextField = new JFormattedTextField(mascaraDeSaque);
-  saqueFormattedTextField.setFont(fonte);
-  saqueFormattedTextField.setBackground(Color.WHITE);
-  saqueFormattedTextField.setBounds(9, 114, 150, 64);
-  getContentPane().add(saqueFormattedTextField);
+  depositoFormattedTextField = new JFormattedTextField(mascaraDeDeposito);
+  depositoFormattedTextField.setFont(fonte);
+  depositoFormattedTextField.setColumns(6);
+  depositoFormattedTextField.setBackground(Color.WHITE);
+  depositoFormattedTextField.setBounds(9, 114, 150, 64);
+  getContentPane().add(depositoFormattedTextField);
   getContentPane().setBackground(SystemColor.control);
   setSize(669, 480);
   setModal(true);
@@ -53,13 +54,13 @@ public class IgSaque extends JDialog
    {
   	public void actionPerformed(ActionEvent arg0)
   	{
-  	 String saque = null;
+  	 String saque = "0000.00";
   	 
-  	 saque = saqueFormattedTextField.getText();
+  	 saque = depositoFormattedTextField.getText();
   	 
   	 saque += botao1.getText();
   	 
-  	 saqueFormattedTextField.setText(saque);
+  	 depositoFormattedTextField.setText(saque);
   	}
    }
   );
@@ -78,11 +79,11 @@ public class IgSaque extends JDialog
   	{
   	 String saque = null;
   	 
-  	 saque = saqueFormattedTextField.getText();
+  	 saque = depositoFormattedTextField.getText();
      
   	 saque += botao2.getText();
   		
-  	 saqueFormattedTextField.setText(saque);
+  	 depositoFormattedTextField.setText(saque);
   	}
    }
   );
@@ -98,11 +99,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao3.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao3.setBackground(new Color(192, 192, 192));
@@ -117,11 +118,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao4.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao4.setBackground(new Color(192, 192, 192));
@@ -136,11 +137,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao5.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao5.setBackground(new Color(192, 192, 192));
@@ -155,11 +156,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao6.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao6.setBackground(new Color(192, 192, 192));
@@ -174,11 +175,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao7.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao7.setBackground(new Color(192, 192, 192));
@@ -193,11 +194,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao8.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao8.setBackground(new Color(192, 192, 192));
@@ -212,11 +213,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao9.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao9.setBackground(new Color(192, 192, 192));
@@ -224,7 +225,7 @@ public class IgSaque extends JDialog
   getContentPane().add(botao9);
   
   botaoCorrige = new JButton("CORRIGE");
-  botaoCorrige.setIcon(new ImageIcon(IgSaque.class.getResource("/tsi/too/bvb/imagens/refresh.png")));
+  botaoCorrige.setIcon(new ImageIcon(Deposito.class.getResource("/tsi/too/bvb/imagens/refresh.png")));
   botaoCorrige.setFont(fonte);
   botaoCorrige.addActionListener
   (
@@ -232,12 +233,14 @@ public class IgSaque extends JDialog
    {
     public void actionPerformed(ActionEvent arg0)
     {
-  	 saqueFormattedTextField.setText("");
+     String saque = "";
+     
+  	 depositoFormattedTextField.setText(saque);
     }
    }
   );
   botaoCorrige.setBackground(Color.LIGHT_GRAY);
-  botaoCorrige.setBounds(239, 383, 189, 64);
+  botaoCorrige.setBounds(235, 383, 189, 64);
   getContentPane().add(botaoCorrige);
   
   botao0 = new JButton("0");
@@ -248,44 +251,50 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = depositoFormattedTextField.getText();
   	
   	saque += botao0.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	depositoFormattedTextField.setText(saque);
    }
   });
   botao0.setBackground(new Color(192, 192, 192));
   botao0.setBounds(340, 263, 150, 64);
   getContentPane().add(botao0);
   
-  botaoSaque = new JButton("SAQUE");
-  botaoSaque.addActionListener(new ActionListener()
+  botaoDeposito = new JButton("DEPÓSITO");
+  botaoDeposito.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+  	String valorDeposito = depositoFormattedTextField.getText();
+  	
+  	setVisible(false);
+  	
+  	new Confirma(valorDeposito, Deposito.this);
+   }
+  });
+  botaoDeposito.setIcon(new ImageIcon(Deposito.class.getResource("/tsi/too/bvb/imagens/next.png")));
+  botaoDeposito.setFont(fonte);
+  botaoDeposito.setBackground(Color.LIGHT_GRAY);
+  botaoDeposito.setBounds(463, 383, 189, 64);
+  getContentPane().add(botaoDeposito);
+  
+  JButton botaoCancelar = new JButton("CANCELAR");
+  botaoCancelar.setIcon(new ImageIcon(Deposito.class.getResource("/tsi/too/bvb/imagens/return.png")));
+  botaoCancelar.setFont(fonte);
+  botaoCancelar.addActionListener(new ActionListener()
   {
    public void actionPerformed(ActionEvent arg0)
    {
-	String valorSaque = saqueFormattedTextField.getText();
-	
-	setVisible(false);
-	
-  	new Confirma(valorSaque, IgSaque.this);
-  	
-  	//Valida o número de conta e realiza o saque.
+	//Pegar a referência da tela anterior.
+	   
+	Deposito.this.dispose();
    }
   });
-  botaoSaque.setIcon(new ImageIcon(IgSaque.class.getResource("/tsi/too/bvb/imagens/next.png")));
-  botaoSaque.setFont(fonte);
-  botaoSaque.setBackground(Color.LIGHT_GRAY);
-  botaoSaque.setBounds(463, 383, 189, 64);
-  getContentPane().add(botaoSaque);
-  
-  botaoCancelar = new JButton("CANCELAR");
-  botaoCancelar.setIcon(new ImageIcon(IgSaque.class.getResource("/tsi/too/bvb/imagens/return.png")));
-  botaoCancelar.setFont(fonte);
   botaoCancelar.setBounds(9, 383, 189, 64);
   getContentPane().add(botaoCancelar);
   
   setVisible(true);
  }
-
 }//Fim do corpo da classe.

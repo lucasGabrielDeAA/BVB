@@ -34,7 +34,9 @@ public class IgCaixaEletronico extends JFrame
    {
 	try
 	{
-	 IgSaque saque = new IgSaque();
+	 setVisible(false);
+		
+	 new IgSaque();
 	}catch (Exception e)
 	{
  	 e.printStackTrace();
@@ -46,6 +48,15 @@ public class IgCaixaEletronico extends JFrame
   wallPaperLabel.add(saqueButton);
   
   JButton depositoButton = new JButton("DEPÓSITO");
+  depositoButton.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent arg0)
+   {
+	setVisible(false);
+	   
+	new Deposito();	
+   }
+  });
   depositoButton.setFont(fonte);
   depositoButton.setBounds(73, 223, 190, 64);
   wallPaperLabel.add(depositoButton);
@@ -56,6 +67,15 @@ public class IgCaixaEletronico extends JFrame
   wallPaperLabel.add(saldoButton);
   
   JButton extratoSimplesButton = new JButton("EXTRATO");
+  extratoSimplesButton.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+	setVisible(false);
+	
+  	new EscolheExtrato();
+   }
+  });
   extratoSimplesButton.setFont(fonte);
   extratoSimplesButton.setBounds(533, 147, 190, 64);
   wallPaperLabel.add(extratoSimplesButton);
