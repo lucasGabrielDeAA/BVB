@@ -5,37 +5,22 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
-import javax.swing.text.MaskFormatter;
-import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+
+import tsi.too.bvb.modulos.CaixaEletronico;
 
 public class IgSaque extends JDialog
 {//Início do corpo da classe.
  private JButton botao1, botao2, botao3, botao4, botao5, botao6, botao7, botao8, botao9, botaoCorrige, botao0, botaoSaque, botaoCancelar;
- private JFormattedTextField saqueFormattedTextField;
  private Font fonte = new Font("Nimbus Sans L", Font.BOLD, 20);
- private IgSaque igSaque;
+ private JTextField saqueTextField;
  
- public IgSaque()
+ public IgSaque(final JDialog tela)
  {
-  //A classe MaskFormatter é utilizada para definir máscaras aos objetos onde se deseja padronizar estéticamente.
-  MaskFormatter mascaraDeSaque = null;
-  try
-  {
-   mascaraDeSaque = new MaskFormatter("####.##");
-  }catch(ParseException e)
-  {
-  }
-  
-  saqueFormattedTextField = new JFormattedTextField(mascaraDeSaque);
-  saqueFormattedTextField.setFont(fonte);
-  saqueFormattedTextField.setBackground(Color.WHITE);
-  saqueFormattedTextField.setBounds(9, 114, 150, 64);
-  getContentPane().add(saqueFormattedTextField);
   getContentPane().setBackground(SystemColor.control);
   setSize(669, 480);
   setModal(true);
@@ -55,11 +40,11 @@ public class IgSaque extends JDialog
   	{
   	 String saque = null;
   	 
-  	 saque = saqueFormattedTextField.getText();
+  	 saque = saqueTextField.getText();
   	 
   	 saque += botao1.getText();
   	 
-  	 saqueFormattedTextField.setText(saque);
+  	 saqueTextField.setText(saque);
   	}
    }
   );
@@ -78,11 +63,11 @@ public class IgSaque extends JDialog
   	{
   	 String saque = null;
   	 
-  	 saque = saqueFormattedTextField.getText();
+  	 saque = saqueTextField.getText();
      
   	 saque += botao2.getText();
   		
-  	 saqueFormattedTextField.setText(saque);
+  	 saqueTextField.setText(saque);
   	}
    }
   );
@@ -98,11 +83,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao3.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao3.setBackground(new Color(192, 192, 192));
@@ -117,11 +102,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao4.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao4.setBackground(new Color(192, 192, 192));
@@ -136,11 +121,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao5.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao5.setBackground(new Color(192, 192, 192));
@@ -155,11 +140,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao6.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao6.setBackground(new Color(192, 192, 192));
@@ -174,11 +159,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao7.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao7.setBackground(new Color(192, 192, 192));
@@ -193,11 +178,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao8.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao8.setBackground(new Color(192, 192, 192));
@@ -212,11 +197,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao9.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao9.setBackground(new Color(192, 192, 192));
@@ -232,7 +217,7 @@ public class IgSaque extends JDialog
    {
     public void actionPerformed(ActionEvent arg0)
     {
-  	 saqueFormattedTextField.setText("");
+  	 saqueTextField.setText("");
     }
    }
   );
@@ -248,11 +233,11 @@ public class IgSaque extends JDialog
    {
   	String saque = "";
   	
-  	saque = saqueFormattedTextField.getText();
+  	saque = saqueTextField.getText();
   	
   	saque += botao0.getText();
   	
-  	saqueFormattedTextField.setText(saque);
+  	saqueTextField.setText(saque);
    }
   });
   botao0.setBackground(new Color(192, 192, 192));
@@ -264,7 +249,7 @@ public class IgSaque extends JDialog
   {
    public void actionPerformed(ActionEvent arg0)
    {
-	String valorSaque = saqueFormattedTextField.getText();
+	String valorSaque = saqueTextField.getText();
 	
 	setVisible(false);
 	
@@ -280,12 +265,26 @@ public class IgSaque extends JDialog
   getContentPane().add(botaoSaque);
   
   botaoCancelar = new JButton("CANCELAR");
+  botaoCancelar.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent arg0)
+   {
+	tela.setVisible(true);
+	   
+	dispose();
+   }
+  });
   botaoCancelar.setIcon(new ImageIcon(IgSaque.class.getResource("/tsi/too/bvb/imagens/return.png")));
   botaoCancelar.setFont(fonte);
   botaoCancelar.setBounds(9, 383, 189, 64);
   getContentPane().add(botaoCancelar);
   
+  saqueTextField = new JTextField();
+  saqueTextField.setEditable(false);
+  saqueTextField.setBounds(9, 111, 150, 64);
+  getContentPane().add(saqueTextField);
+  saqueTextField.setColumns(10);
+  
   setVisible(true);
  }
-
 }//Fim do corpo da classe.
